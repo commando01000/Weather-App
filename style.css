@@ -128,12 +128,112 @@ header {
   background-color: #2d303d !important;
 }
 
+.row1 .temperature {
+  background-color: #323544 !important;
+  color: white;
+  font-size: 90px !important;
+  font-weight: 700 !important;
+  /* line-height: 135px !important; */
+}
+
 .row1 {
   background-color: #323544 !important;
+  /* text-align: center; */
+}
+
+.row1 .name {
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(191, 193, 200);
+}
+
+.row1 .degree .o {
+  position: relative;
+  top: -40px;
+  left: 5px;
+  color: white;
+  font-size: 90px !important;
+  font-weight: 400 !important;
+  line-height: 135px !important;
+}
+
+.row1 .degree .c {
+  color: white;
+  font-size: 90px !important;
+  font-weight: 700 !important;
+  line-height: 135px !important;
+}
+
+.row1 .degree {
+  position: relative;
+  right: 10px;
+}
+
+.row1 .weather-icon {
+  vertical-align: baseline;
+}
+
+.row1 .weather-icon img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.row1 .condition {
+  color: #009ad8;
+}
+
+.wind-speed {
+  color: rgb(191, 193, 200);
+}
+
+.wind-direction {
+  color: rgb(191, 193, 200);
+}
+
+.rain-percent {
+  color: rgb(191, 193, 200);
 }
 
 .row2 {
   background-color: #262936 !important;
+  text-align: center;
+}
+
+.row2 .name {
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(191, 193, 200);
+}
+
+.row2 .degree .o {
+  position: relative;
+  top: -15px;
+  left: 5px;
+  color: white;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 135px !important;
+}
+
+.row2 .degree .c {
+  color: white;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 135px !important;
+}
+
+.row2 .degree {
+  position: relative;
+  right: 10px;
+}
+
+.row2 .weather-icon {
+  vertical-align: baseline;
+}
+
+.row2 .weather-icon img {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .row3 {

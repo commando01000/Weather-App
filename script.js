@@ -2,7 +2,13 @@ var cityName = document.getElementById("cityname");
 var API_Key = "d1d2794b80424dc8917142855232812";
 
 var currentWeatherHeader = document.getElementById("current-day");
-var currentWeatherTemperature = document.querySelector(".row1");
+var currentWeatherCityName = document.querySelector(".name");
+var currentWeatherTemperature = document.querySelector(".temperature");
+var currentWeatherIcon = document.querySelector(".weather-icon");
+var currentWeatherRainPercentage = document.querySelector(".rain-percent");
+var currentWeatherCondition = document.querySelector(".condition");
+var currentWeatherWindSpeed = document.querySelector(".wind-speed");
+var currentWeatherWindDirection = document.querySelector(".wind-direction");
 var currentWeatherDate = document.getElementById("endline");
 
 var firstForecastHeader = document.getElementById("next-day");
@@ -18,7 +24,7 @@ async function get_Current_Weather_Data() {
   if (cityName.value.length >= 3) {
     //in case of user input
     var weather_data = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${API_Key}&q=${cityName.value}`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_Key}&q=${cityName.value}`
     );
     if (weather_data.status == 400) {
       cityName.classList.add("is-invalid");
@@ -32,7 +38,7 @@ async function get_Current_Weather_Data() {
   } else {
     //in case he did not type anything
     var weather_data = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${API_Key}&q='Cairo'`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_Key}&q='Cairo'`
     );
     if (weather_data.status == 400) {
       cityName.classList.add("is-invalid");
@@ -50,6 +56,7 @@ async function get_Current_Weather_Data() {
 }
 
 function Display_Current_Weather(data) {
+  console.log(data);
   const lastUpdated = new Date(data.current.last_updated);
 
   const dayOfWeek = new Intl.DateTimeFormat("en-US", {
@@ -61,7 +68,13 @@ function Display_Current_Weather(data) {
   const dayOfMonth = lastUpdated.getDate();
 
   // console.log(`${dayOfMonth} - ${dayOfWeek}, ${month}`);
-  currentWeatherTemperature.innerHTML = data.current.temp_c;
+  currentWeatherTemperature.innerHTML = `${data.current.temp_c}`;
+  currentWeatherCityName.innerHTML = `${data.location.name}`;
+  currentWeatherIcon.src = `https:${data.current.condition.icon}`;
+  currentWeatherRainPercentage.innerHTML = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`;
+  currentWeatherCondition.innerHTML = data.current.condition.text;
+  currentWeatherWindSpeed.innerHTML = `${data.current.wind_kph} km/h`;
+  currentWeatherWindDirection.innerHTML = `${data.current.wind_dir}`;
   currentWeatherHeader.innerHTML = `${dayOfWeek}`;
   currentWeatherDate.innerHTML = `${dayOfMonth} - ${month}`;
 }
@@ -70,7 +83,7 @@ async function get_Weather_Forecast_Data() {
   if (cityName.value.length >= 3) {
     //in case of user input
     var weather_data = await fetch(
-      ` https://api.weatherapi.com/v1/forecast.json?key=${API_Key}&q=${cityName.value}&days=3`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_Key}&q=${cityName.value}&days=3`
     );
     if (weather_data.status == 400) {
       cityName.classList.add("is-invalid");
@@ -80,7 +93,7 @@ async function get_Weather_Forecast_Data() {
       cityName.classList.add("is-valid");
     }
     data = await weather_data.json();
-    console.log(data);
+    // console.log(data);
     Display_Weather_Forecast(data);
   } else {
     //in case he did not type anything
@@ -94,7 +107,7 @@ async function get_Weather_Forecast_Data() {
       cityName.classList.remove("is-invalid");
     }
     data = await weather_data.json();
-    console.log(data);
+    // console.log(data);
     Display_Weather_Forecast(data);
   }
 }
