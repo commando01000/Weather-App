@@ -17,7 +17,7 @@ async function get_Current_Weather_Data() {
   if (cityName.value.length >= 3) {
     //in case of user input
     var weather_data = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${API_Key}&q=${cityName.value}`
+      `https://api.weatherapi.com/v1/current.json?key=${API_Key}&q=${cityName.value}`
     );
     if (weather_data.status == 400) {
       cityName.classList.add("is-invalid");
@@ -31,7 +31,7 @@ async function get_Current_Weather_Data() {
   } else {
     //in case he did not type anything
     var weather_data = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${API_Key}&q='Cairo'`
+      `https://api.weatherapi.com/v1/current.json?key=${API_Key}&q='Cairo'`
     );
     if (weather_data.status == 400) {
       cityName.classList.add("is-invalid");
