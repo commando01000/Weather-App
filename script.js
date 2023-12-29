@@ -2,6 +2,7 @@ var cityName = document.getElementById("cityname");
 var API_Key = "d1d2794b80424dc8917142855232812";
 
 var currentWeatherHeader = document.getElementById("current-day");
+var currentWeatherTemperature = document.querySelector(".row1");
 var currentWeatherDate = document.getElementById("endline");
 
 var firstForecastHeader = document.getElementById("next-day");
@@ -38,16 +39,17 @@ async function get_Current_Weather_Data() {
       cityName.classList.remove("is-valid");
     } else {
       cityName.classList.remove("is-invalid");
-      cityName.classList.add("is-valid");
     }
     data = await weather_data.json();
     Display_Current_Weather(data);
   }
+  if (cityName.value.length == 0) {
+    cityName.classList.remove("is-invalid");
+    cityName.classList.remove("is-valid");
+  }
 }
 
 function Display_Current_Weather(data) {
-  currentWeatherHeader.innerHTML = data.current.temp_c;
-
   const lastUpdated = new Date(data.current.last_updated);
 
   const dayOfWeek = new Intl.DateTimeFormat("en-US", {
@@ -59,6 +61,7 @@ function Display_Current_Weather(data) {
   const dayOfMonth = lastUpdated.getDate();
 
   // console.log(`${dayOfMonth} - ${dayOfWeek}, ${month}`);
+  currentWeatherTemperature.innerHTML = data.current.temp_c;
   currentWeatherHeader.innerHTML = `${dayOfWeek}`;
   currentWeatherDate.innerHTML = `${dayOfMonth} - ${month}`;
 }
@@ -89,7 +92,6 @@ async function get_Weather_Forecast_Data() {
       cityName.classList.remove("is-valid");
     } else {
       cityName.classList.remove("is-invalid");
-      cityName.classList.add("is-valid");
     }
     data = await weather_data.json();
     console.log(data);
