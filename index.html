@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg p-5">
+      <div class="container">
+        <div class="logo">
+          <a class="branding" href="/">
+            <img src="images/logo.png" alt="" class="logo" />
+            <div class="logo-type ms-1">
+              <h6 class="site-title">Weather</h6>
+              <small class="site-description">tagline goes here</small>
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item ps-5">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item ps-5">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item ps-5">
+              <a class="nav-link" href="#">Live cameras</a>
+            </li>
+            <li class="nav-item ps-5">
+              <a class="nav-link" href="#">Photos</a>
+            </li>
+            <li class="nav-item ps-5">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <header class="position-relative">
+      <div class="header-content position-relative">
+        <div class="header-background">
+          <img src="images/banner.png" alt="Cities" />
+        </div>
+        <div class="header-content-container w-75 m-auto position-absolute">
+          <input
+            id="cityname"
+            type="text"
+            placeholder="find your location..."
+            class="form-control p-3"
+            onkeyup="get_Current_Weather_Data()"
+          />
+        </div>
+      </div>
+      <section id="api-core-table" class="position-absolute w-75">
+        <div class="table-responsive">
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th class="col1 p-0" scope="col">
+                  <span id="current-day" class="text"></span>
+                  <span id="endline"></span>
+                </th>
+                <th class="col2 p-0" scope="col">
+                  <span id="next-day" class="text"></span>
+                  <span id="endline"></span>
+                </th>
+                <th class="col3 p-0" scope="col">
+                  <span id="after-next-day" class="text"></span>
+                  <span id="endline"></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td class="row1" scope="row">R1C1</td>
+                <td class="row2">R1C2</td>
+                <td class="row3">R1C3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </header>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <form action="#" class="position-relative subscribe-form">
+              <input
+                type="text"
+                placeholder="Enter your email to subscribe..."
+              />
+              <input
+                type="submit"
+                class="position-absolute"
+                value="Subscribe"
+              />
+            </form>
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+              <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <p class="colophon">
+          Copyright 2014 Company name. Designed by Themezy . All rights reserved
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
