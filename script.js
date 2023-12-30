@@ -62,7 +62,7 @@ function Display_Current_Weather(data) {
   const dayOfWeek = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
   }).format(lastUpdated);
-  
+
   const month = new Intl.DateTimeFormat("en-US", { month: "long" }).format(
     lastUpdated
   );
