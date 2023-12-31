@@ -11,8 +11,21 @@ var currentWeatherWindSpeed = document.querySelector(".wind-speed");
 var currentWeatherWindDirection = document.querySelector(".wind-direction");
 var currentWeatherDate = document.getElementById("endline");
 
-var firstForecastHeader = document.getElementById("next-day");
-var secondForecastHeader = document.getElementById("after-next-day");
+var firstForecastHeader = document.getElementById("forecast-day-one-name");
+var firstForecastIcon = document.querySelector(
+  ".weather-forecast-first-day-icon"
+);
+var firstForecastMaxTemperature = document.querySelector(
+  ".forecast-first-day-max-temperature"
+);
+var firstForecastMinTemperature = document.querySelector(
+  ".forecast-first-day-min-temperature"
+);
+var firstForecastCondition = document.querySelector(
+  ".forecast-first-day-condition"
+);
+
+var secondForecastHeader = document.getElementById("forecast-day-two-name");
 
 var data = [];
 var tableData;
@@ -55,31 +68,6 @@ async function get_Current_Weather_Data() {
   }
 }
 
-function Display_Current_Weather(data) {
-  console.log(data);
-  const lastUpdated = new Date(data.current.last_updated);
-
-  const dayOfWeek = new Intl.DateTimeFormat("en-US", {
-    weekday: "long",
-  }).format(lastUpdated);
-
-  const month = new Intl.DateTimeFormat("en-US", { month: "long" }).format(
-    lastUpdated
-  );
-  const dayOfMonth = lastUpdated.getDate();
-
-  // console.log(`${dayOfMonth} - ${dayOfWeek}, ${month}`);
-  currentWeatherTemperature.innerHTML = `${data.current.temp_c}`;
-  currentWeatherCityName.innerHTML = `${data.location.name}`;
-  currentWeatherIcon.src = `https:${data.current.condition.icon}`;
-  currentWeatherRainPercentage.innerHTML = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`;
-  currentWeatherCondition.innerHTML = data.current.condition.text;
-  currentWeatherWindSpeed.innerHTML = `${data.current.wind_kph} km/h`;
-  currentWeatherWindDirection.innerHTML = `${data.current.wind_dir}`;
-  currentWeatherHeader.innerHTML = `${dayOfWeek}`;
-  currentWeatherDate.innerHTML = `${dayOfMonth} - ${month}`;
-}
-
 async function get_Weather_Forecast_Data() {
   if (cityName.value.length >= 3) {
     //in case of user input
@@ -113,6 +101,31 @@ async function get_Weather_Forecast_Data() {
   }
 }
 
+function Display_Current_Weather(data) {
+  console.log(data);
+  const lastUpdated = new Date(data.current.last_updated);
+
+  const dayOfWeek = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+  }).format(lastUpdated);
+
+  const month = new Intl.DateTimeFormat("en-US", { month: "long" }).format(
+    lastUpdated
+  );
+  const dayOfMonth = lastUpdated.getDate();
+
+  // console.log(`${dayOfMonth} - ${dayOfWeek}, ${month}`);
+  currentWeatherTemperature.innerHTML = `${data.current.temp_c}`;
+  currentWeatherCityName.innerHTML = `${data.location.name}`;
+  currentWeatherIcon.src = `https:${data.current.condition.icon}`;
+  currentWeatherRainPercentage.innerHTML = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`;
+  currentWeatherCondition.innerHTML = data.current.condition.text;
+  currentWeatherWindSpeed.innerHTML = `${data.current.wind_kph} km/h`;
+  currentWeatherWindDirection.innerHTML = `${data.current.wind_dir}`;
+  currentWeatherHeader.innerHTML = `${dayOfWeek}`;
+  currentWeatherDate.innerHTML = `${dayOfMonth} - ${month}`;
+}
+
 function Display_Weather_Forecast(data) {
   const nextDay = new Date(data.forecast.forecastday[1].date);
   const after_next_day = new Date(data.forecast.forecastday[2].date);
@@ -133,8 +146,12 @@ function Display_Weather_Forecast(data) {
   }).format(after_next_day);
   const dayOfMonth_after_next_day = nextDay.getDate();
 
+  console.log(data);
   // console.log(`${dayOfMonth} - ${dayOfWeek}, ${month}`);
   firstForecastHeader.innerHTML = `${dayOfWeek_nextDay}`;
-  secondForecastHeader.innerHTML = `${dayOfWeek_after_next_day}`;
-  // currentWeatherDate.innerHTML = `${dayOfMonth} - ${month}`;
+  // secondForecastHeader.innerHTML = `${dayOfWeek_after_next_day}`;
+  firstForecastIcon.src = `https:${data.forecast.forecastday[1].day.condition.icon}`;
+  firstForecastMaxTemperature.innerHTML = `${data.forecast.forecastday[1].day.maxtemp_c}`;
+  firstForecastMinTemperature.innerHTML = `${data.forecast.forecastday[1].day.mintemp_c}`;
+  firstForecastCondition.innerHTML = `${data.forecast.forecastday[1].day.condition.text}`;
 }

@@ -126,10 +126,6 @@ header {
   border-radius: 15px !important;
 }
 
-.col2 {
-  background-color: #222530 !important;
-}
-
 .col3 {
   background-color: #2d303d !important;
 }
@@ -203,80 +199,91 @@ header {
   color: rgb(191, 193, 200);
 }
 
-.row2 {
+.forecast-day {
   background-color: #262936 !important;
   text-align: center;
+  border: 1px solid transparent !important;
+  border-radius: 15px !important;
 }
 
-.row2 .name {
-  font-size: 24px;
-  font-weight: 300;
+.forecast-day .text {
   color: rgb(191, 193, 200);
 }
 
-.row2 .degree .o {
+.forecast-day .header {
+  background-color: #222530 !important;
+  border: 1px solid transparent !important;
+  border-radius: 15px !important;
+}
+
+.forecast-day .forecast-first-day-max-temperature {
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.forecast-day .forecast-first-day-min-temperature {
+  color: rgb(191, 193, 200);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.forecast-day .forecast-first-day-max-degree .o {
   position: relative;
   top: -15px;
   left: 5px;
   color: white;
   font-size: 20px !important;
   font-weight: 400 !important;
-  line-height: 135px !important;
+  line-height: 70px !important;
 }
 
-.row2 .degree .c {
+.forecast-day .forecast-first-day-max-degree .c {
   color: white;
   font-size: 20px !important;
   font-weight: 700 !important;
-  line-height: 135px !important;
+  line-height: 82px !important;
 }
 
-.row2 .degree {
+.forecast-day .forecast-first-day-min-degree .o {
+  position: relative;
+  top: -15px;
+  left: 5px;
+  color: rgb(191, 193, 200);
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 70px !important;
+}
+
+.forecast-day .forecast-first-day-min-degree .c {
+  color: rgb(191, 193, 200);
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 73.5px !important;
+}
+
+.forecast-day .forecast-first-day-degree {
   position: relative;
   right: 10px;
 }
 
-.row2 .weather-icon {
-  vertical-align: baseline;
-}
-
-.row2 .weather-icon img {
+.forecast-day .weather-forecast-first-day-icon img {
   width: 100% !important;
   height: 100% !important;
+}
+
+.forecast-first-day-condition {
+  color: #009ad8;
 }
 
 .row3 {
   background-color: #323544 !important;
 }
 
-.table.table-primary {
-  border: 2px solid transparent !important;
-  border-radius: 20px !important;
-  overflow: hidden; /* Ensures the border-radius is applied correctly */
-}
-
-.table.table-primary thead th {
-  border-bottom: 1px solid transparent !important;
-}
-
-.table.table-primary tbody td {
-  border-bottom: 1px solid transparent !important;
-}
-
-th {
-  color: rgb(191, 193, 200) !important;
-}
-
-.col2 .text {
-  display: block;
-  transform: translateY(-50%);
-  text-align: center;
-}
-
-.col3 .text {
-  display: block;
-  transform: translateY(-50%);
-  text-align: center;
+@media screen and (max-width: 2000px) {
+  header {
+    height: 100vh !important;
+  }
 }
 
 .site-footer {

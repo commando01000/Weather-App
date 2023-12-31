@@ -82,8 +82,8 @@
       </div>
       <div id="api-core-table" class="position-absolute w-100 m-auto">
         <div class="container">
-          <div class="row">
-            <div class="col-md-4">
+          <div class="row gx-0 gy-2">
+            <div class="col-lg-4 col-sm-12">
               <div class="current-weather">
                 <div class="header d-flex justify-content-between p-2">
                   <span id="current-day" class="text"></span>
@@ -91,15 +91,17 @@
                 </div>
                 <div class="body p-3">
                   <div class="name"></div>
-                  <div class="temperature d-inline-block"></div>
-                  <div class="degree d-inline-block">
-                    <span class="o">o</span><span class="c">C</span>
+                  <div class="d-flex align-items-center">
+                    <div class="temperature"></div>
+                    <div class="degree">
+                      <span class="o">o</span><span class="c">C</span>
+                    </div>
+                    <img
+                      src=""
+                      class="weather-icon"
+                      alt="current-weather-icon"
+                    />
                   </div>
-                  <img
-                    src=""
-                    class="weather-icon d-inline-block"
-                    alt="current-weather-icon"
-                  />
                   <div class="condition"></div>
                   <br />
                   <img src="./images/icon-umberella.png" alt="wind-speed" />
@@ -112,6 +114,35 @@
                     alt="wind-direction"
                   />
                   <span class="wind-direction"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="forecast-day">
+                <div class="header d-flex justify-content-center p-2">
+                  <span id="forecast-day-one-name" class="text"></span>
+                </div>
+                <div class="body p-3">
+                  <img
+                    src=""
+                    class="weather-forecast-first-day-icon"
+                    alt="forecast-weather-icon"
+                  />
+                  <br />
+                  <div
+                    class="forecast-first-day-max-temperature d-inline-block"
+                  ></div>
+                  <div class="forecast-first-day-max-degree d-inline-block">
+                    <span class="o">o</span><span class="c">C</span>
+                  </div>
+                  <br />
+                  <div
+                    class="forecast-first-day-min-temperature d-inline-block"
+                  ></div>
+                  <div class="forecast-first-day-min-degree d-inline-block">
+                    <span class="o">o</span><span class="c">C</span>
+                  </div>
+                  <div class="forecast-first-day-condition"></div>
                 </div>
               </div>
             </div>
