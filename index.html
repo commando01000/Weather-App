@@ -80,10 +80,42 @@
           />
         </div>
       </div>
-      <div id="api-core-table" class="position-absolute w-75">
+      <div id="api-core-table" class="position-absolute w-100 m-auto">
         <div class="container">
           <div class="row">
-            <div class="col-lg-10 col-sm-12">
+            <div class="col-md-4">
+              <div class="current-weather">
+                <div class="header d-flex justify-content-between p-2">
+                  <span id="current-day" class="text"></span>
+                  <span id="endline" class="text"></span>
+                </div>
+                <div class="body p-3">
+                  <div class="name"></div>
+                  <div class="temperature d-inline-block"></div>
+                  <div class="degree d-inline-block">
+                    <span class="o">o</span><span class="c">C</span>
+                  </div>
+                  <img
+                    src=""
+                    class="weather-icon d-inline-block"
+                    alt="current-weather-icon"
+                  />
+                  <div class="condition"></div>
+                  <br />
+                  <img src="./images/icon-umberella.png" alt="wind-speed" />
+                  <span class="rain-percent me-2"></span>
+                  <img src="./images/icon-wind.png" alt="wind-speed" />
+                  <span class="wind-speed"></span>
+                  <img
+                    src="./images/icon-compass.png"
+                    class="ms-2"
+                    alt="wind-direction"
+                  />
+                  <span class="wind-direction"></span>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-lg-10 col-sm-12">
               <div class="table-responsive">
                 <table class="table table-primary">
                   <thead>
@@ -159,7 +191,7 @@
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
