@@ -1,5 +1,4 @@
 * {
-  overflow: hidden;
   margin: 0;
   padding: 0;
 }
@@ -59,7 +58,6 @@
   font-weight: 300;
   color: rgb(191, 193, 200) !important;
   line-height: 10px;
-  overflow: visible;
 }
 
 .branding img {
@@ -70,6 +68,7 @@
 header {
   background-color: #1e202b;
   height: 75vh;
+  overflow: hidden;
 }
 
 .header-background img {
@@ -163,14 +162,14 @@ header {
   color: white;
   font-size: 70px;
   font-weight: 400 !important;
-  line-height: 140px !important;
+  line-height: 135px !important;
 }
 
 .current-weather .body .degree .c {
   color: white;
   font-size: 70px;
   font-weight: 700 !important;
-  line-height: 147px !important;
+  line-height: 135px !important;
 }
 
 .current-weather .body .degree {
@@ -233,10 +232,10 @@ header {
 }
 
 .forecast-day .forecast-first-day-max-degree .o {
+  color: white;
   position: relative;
   top: -15px;
-  left: 5px;
-  color: white;
+  right: 3px;
   font-size: 20px !important;
   font-weight: 400 !important;
   line-height: 70px !important;
@@ -244,6 +243,9 @@ header {
 
 .forecast-day .forecast-first-day-max-degree .c {
   color: white;
+  position: relative;
+  top: 0px;
+  right: 5px;
   font-size: 20px !important;
   font-weight: 700 !important;
   line-height: 82px !important;
@@ -252,7 +254,7 @@ header {
 .forecast-day .forecast-first-day-min-degree .o {
   position: relative;
   top: -15px;
-  left: 5px;
+  right: 2px;
   color: rgb(191, 193, 200);
   font-size: 15px !important;
   font-weight: 400 !important;
@@ -261,6 +263,9 @@ header {
 
 .forecast-day .forecast-first-day-min-degree .c {
   color: rgb(191, 193, 200);
+  position: relative;
+  top: 0px;
+  right: 2px;
   font-size: 15px !important;
   font-weight: 400 !important;
   line-height: 73.5px !important;
@@ -307,6 +312,7 @@ header {
 .site-footer {
   background: #262936;
   padding: 50px 0;
+  overflow: visible !important;
 }
 
 .site-footer .subscribe-form input[type="text"] {
