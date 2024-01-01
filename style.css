@@ -288,7 +288,7 @@ header {
 
 @media screen and (max-width: 768px) {
   header {
-    height: 120vh !important;
+    height: 100vh !important;
   }
 
   .current-weather .temperature {
