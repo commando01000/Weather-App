@@ -57,7 +57,9 @@
 .site-description {
   font-size: 14px;
   font-weight: 300;
-  color: rgb(191, 193, 200);
+  color: rgb(191, 193, 200) !important;
+  line-height: 10px;
+  overflow: visible;
 }
 
 .branding img {
