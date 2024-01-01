@@ -133,7 +133,7 @@ header {
 .current-weather .temperature {
   background-color: #323544 !important;
   color: white;
-  font-size: 80px !important;
+  font-size: 90px;
   font-weight: 700 !important;
   /* line-height: 135px !important; */
 }
@@ -157,14 +157,14 @@ header {
   top: -40px;
   left: 5px;
   color: white;
-  font-size: 90px !important;
+  font-size: 90px;
   font-weight: 400 !important;
   line-height: 135px !important;
 }
 
 .current-weather .body .degree .c {
   color: white;
-  font-size: 90px !important;
+  font-size: 90px;
   font-weight: 700 !important;
   line-height: 135px !important;
 }
@@ -283,6 +283,16 @@ header {
 @media screen and (max-width: 2000px) {
   header {
     height: 100vh !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .current-weather .temperature {
+    font-size: 40px !important;
+  }
+  .current-weather .degree .o,
+  .current-weather .degree .c {
+    font-size: 40px !important;
   }
 }
 
