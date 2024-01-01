@@ -161,14 +161,14 @@ header {
   color: white;
   font-size: 70px;
   font-weight: 400 !important;
-  line-height: 135px !important;
+  line-height: 140px !important;
 }
 
 .current-weather .body .degree .c {
   color: white;
   font-size: 70px;
   font-weight: 700 !important;
-  line-height: 135px !important;
+  line-height: 147px !important;
 }
 
 .current-weather .body .degree {
