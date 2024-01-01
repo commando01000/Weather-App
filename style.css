@@ -288,11 +288,11 @@ header {
 
 @media screen and (max-width: 768px) {
   .current-weather .temperature {
-    font-size: 60px !important;
+    font-size: 70px !important;
   }
   .current-weather .degree .o,
   .current-weather .degree .c {
-    font-size: 60px !important;
+    font-size: 70px !important;
   }
 }
 
