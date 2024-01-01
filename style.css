@@ -133,7 +133,7 @@ header {
 .current-weather .temperature {
   background-color: #323544 !important;
   color: white;
-  font-size: 90px;
+  font-size: 70px;
   font-weight: 700 !important;
   /* line-height: 135px !important; */
 }
@@ -155,16 +155,16 @@ header {
 .current-weather .body .degree .o {
   position: relative;
   top: -40px;
-  left: 5px;
+  left: 8px;
   color: white;
-  font-size: 90px;
+  font-size: 70px;
   font-weight: 400 !important;
   line-height: 135px !important;
 }
 
 .current-weather .body .degree .c {
   color: white;
-  font-size: 90px;
+  font-size: 70px;
   font-weight: 700 !important;
   line-height: 135px !important;
 }
