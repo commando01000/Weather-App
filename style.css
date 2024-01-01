@@ -292,7 +292,7 @@ header {
 
 @media screen and (max-width: 2000px) {
   header {
-    height: 100vh !important;
+    height: 75vh !important;
   }
 }
 
