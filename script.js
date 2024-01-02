@@ -144,7 +144,7 @@ function Display_Weather_Forecast(data) {
   const month_after_next_day = new Intl.DateTimeFormat("en-US", {
     month: "long",
   }).format(after_next_day);
-  const dayOfMonth_after_next_day = nextDay.getDate();
+  const dayOfMonth_after_next_day = after_next_day.getDate();
 
   console.log(data);
   // console.log(`${dayOfMonth} - ${dayOfWeek}, ${month}`);
