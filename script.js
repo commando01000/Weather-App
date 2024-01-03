@@ -26,6 +26,18 @@ var firstForecastCondition = document.querySelector(
 );
 
 var secondForecastHeader = document.getElementById("forecast-day-two-name");
+var secondForecastIcon = document.querySelector(
+  ".weather-forecast-second-day-icon"
+);
+var secondForecastMaxTemperature = document.querySelector(
+  ".forecast-second-day-max-temperature"
+);
+var secondForecastMinTemperature = document.querySelector(
+  ".forecast-second-day-min-temperature"
+);
+var secondForecastCondition = document.querySelector(
+  ".forecast-second-day-condition"
+);
 
 var data = [];
 var tableData;
@@ -148,10 +160,16 @@ function Display_Weather_Forecast(data) {
 
   console.log(data);
   // console.log(`${dayOfMonth} - ${dayOfWeek}, ${month}`);
+
   firstForecastHeader.innerHTML = `${dayOfWeek_nextDay}`;
-  // secondForecastHeader.innerHTML = `${dayOfWeek_after_next_day}`;
   firstForecastIcon.src = `https:${data.forecast.forecastday[1].day.condition.icon}`;
   firstForecastMaxTemperature.innerHTML = `${data.forecast.forecastday[1].day.maxtemp_c}`;
   firstForecastMinTemperature.innerHTML = `${data.forecast.forecastday[1].day.mintemp_c}`;
   firstForecastCondition.innerHTML = `${data.forecast.forecastday[1].day.condition.text}`;
+
+  secondForecastHeader.innerHTML = `${dayOfWeek_after_next_day}`;
+  secondForecastIcon.src = `https:${data.forecast.forecastday[2].day.condition.icon}`;
+  secondForecastMaxTemperature.innerHTML = `${data.forecast.forecastday[2].day.maxtemp_c}`;
+  secondForecastMinTemperature.innerHTML = `${data.forecast.forecastday[2].day.mintemp_c}`;
+  secondForecastCondition.innerHTML = `${data.forecast.forecastday[2].day.condition.text}`;
 }

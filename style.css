@@ -286,8 +286,87 @@ header {
   color: #009ad8;
 }
 
-.row3 {
+.forecast-next-day {
   background-color: #323544 !important;
+  text-align: center;
+  border: 1px solid transparent !important;
+  border-radius: 15px !important;
+}
+
+.forecast-next-day .text {
+  color: rgb(191, 193, 200);
+}
+
+.forecast-next-day .header {
+  background-color: #2d303d !important;
+  border: 1px solid transparent !important;
+  border-radius: 15px !important;
+}
+
+.forecast-next-day .forecast-second-day-max-temperature {
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.forecast-next-day .forecast-second-day-min-temperature {
+  color: rgb(191, 193, 200);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.forecast-next-day .forecast-second-day-max-degree .o {
+  color: white;
+  position: relative;
+  top: -15px;
+  right: 3px;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 70px !important;
+}
+
+.forecast-next-day .forecast-second-day-max-degree .c {
+  color: white;
+  position: relative;
+  top: 0px;
+  right: 5px;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 82px !important;
+}
+
+.forecast-next-day .forecast-second-day-min-degree .o {
+  position: relative;
+  top: -15px;
+  right: 2px;
+  color: rgb(191, 193, 200);
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 70px !important;
+}
+
+.forecast-next-day .forecast-second-day-min-degree .c {
+  color: rgb(191, 193, 200);
+  position: relative;
+  top: 0px;
+  right: 2px;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 73.5px !important;
+}
+
+.forecast-next-day .forecast-second-day-degree {
+  position: relative;
+  right: 10px;
+}
+
+.forecast-next-day .weather-forecast-second-day-icon img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.forecast-second-day-condition {
+  color: #009ad8;
 }
 
 @media screen and (max-width: 2000px) {
@@ -304,13 +383,13 @@ header {
 
 @media screen and (max-width: 992px) {
   header {
-    height: 100vh !important;
+    height: 140vh !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   header {
-    height: 110vh !important;
+    height: 140vh !important;
   }
 
   .current-weather .temperature {
