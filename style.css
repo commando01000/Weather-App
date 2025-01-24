@@ -383,13 +383,13 @@ header {
 
 @media screen and (max-width: 992px) {
   header {
-    height: 140vh !important;
+    height: 180vh !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   header {
-    height: 160vh !important;
+    height: 180vh !important;
   }
 
   .current-weather .temperature {
